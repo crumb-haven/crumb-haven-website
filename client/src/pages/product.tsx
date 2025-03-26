@@ -8,6 +8,11 @@ import { Check, ShoppingCart, ChevronLeft } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Product, ProductFeature } from "@shared/schema";
 import { useCartStore } from "@/lib/cart-store";
+// Import the necessary attached assets
+import almondOatImage from "@assets/Almond Oat Lifestyle.png";
+import chocochipBrownieImage from "@assets/Chocochip Brownie.png";
+import kodoMilletImage from "@assets/Kodo Millet.png";
+import honeyOatsImage from "@assets/Honey Oats.png";
 
 interface ProductResponse {
   product: Product;
@@ -67,6 +72,21 @@ const ProductPage = () => {
 
   const { product, features } = data;
 
+  // Helper function to get the correct image based on product name
+  const getProductImage = (product: Product) => {
+    if (product.name.includes("Almond")) {
+      return almondOatImage;
+    } else if (product.name.includes("Chocochip")) {
+      return chocochipBrownieImage;
+    } else if (product.name.includes("Kodo")) {
+      return kodoMilletImage;
+    } else if (product.name.includes("Honey")) {
+      return honeyOatsImage;
+    }
+    // Fallback to first image if no match
+    return almondOatImage;
+  };
+
   const increaseQuantity = () => {
     setQuantity(prev => prev + 1);
   };
@@ -119,7 +139,7 @@ const ProductPage = () => {
                 transition={{ duration: 0.6 }}
               >
                 <img 
-                  src={product.imageSrc} 
+                  src={getProductImage(product)} 
                   alt={product.name} 
                   className="w-full h-auto object-cover rounded-lg shadow-md"
                 />

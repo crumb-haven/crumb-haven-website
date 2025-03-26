@@ -2,6 +2,11 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Product } from "@shared/schema";
 import { useCartStore } from "@/lib/cart-store";
+// Import the necessary attached assets
+import almondOatImage from "@assets/Almond Oat Lifestyle.png";
+import chocochipBrownieImage from "@assets/Chocochip Brownie.png";
+import kodoMilletImage from "@assets/Kodo Millet.png";
+import honeyOatsImage from "@assets/Honey Oats.png";
 
 interface ProductCardProps {
   product: Product;
@@ -15,7 +20,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
       id: product.id,
       name: product.name,
       price: Number(product.salePrice || product.price),
-      image: product.imageSrc,
+      image: getProductImage(product),
       quantity: 1
     });
   };
@@ -44,11 +49,26 @@ const ProductCard = ({ product }: ProductCardProps) => {
     return tags;
   };
 
+  // Helper function to get the correct image based on product name
+  const getProductImage = (product: Product) => {
+    if (product.name.includes("Almond")) {
+      return almondOatImage;
+    } else if (product.name.includes("Chocochip")) {
+      return chocochipBrownieImage;
+    } else if (product.name.includes("Kodo")) {
+      return kodoMilletImage;
+    } else if (product.name.includes("Honey")) {
+      return honeyOatsImage;
+    }
+    // Fallback to first image if no match
+    return almondOatImage;
+  };
+
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow hover:scale-[1.02] duration-300">
       <Link href={`/product/${product.slug}`}>
         <img 
-          src={product.imageSrc} 
+          src={getProductImage(product)} 
           alt={product.name} 
           className="w-full h-60 object-cover" 
           width="500" 
