@@ -1,0 +1,109 @@
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "wouter";
+import { Button } from "@/components/ui/button";
+import { ShoppingCart } from "lucide-react";
+import { useCartStore } from "@/lib/cart-store";
+
+const Header = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [location] = useLocation();
+  const { items } = useCartStore();
+
+  const cartItemCount = items.reduce((total, item) => total + item.quantity, 0);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  // Close mobile menu when location changes
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location]);
+
+  return (
+    <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-md' : ''} bg-white`}>
+      <div className="container mx-auto px-4 py-3">
+        <div className="flex justify-between items-center">
+          {/* Logo */}
+          <Link href="/" className="flex items-center">
+            <h1 className="font-['Playfair_Display'] text-2xl font-bold text-[#8B5A2B] md:text-3xl">Crumb Haven</h1>
+          </Link>
+          
+          {/* Mobile menu button */}
+          <button 
+            onClick={toggleMobileMenu}
+            className="md:hidden"
+          >
+            <i className="fas fa-bars text-[#8B5A2B] text-2xl"></i>
+          </button>
+          
+          {/* Desktop navigation */}
+          <nav className="hidden md:flex space-x-6 items-center">
+            <Link href="/" className="font-['Lato'] text-[#8B5A2B] hover:text-[#6D4522] font-medium">
+              Home
+            </Link>
+            <Link href="/products" className="font-['Lato'] text-[#8B5A2B] hover:text-[#6D4522] font-medium">
+              Our Cookies
+            </Link>
+            <a href="/#about" className="font-['Lato'] text-[#8B5A2B] hover:text-[#6D4522] font-medium">
+              About Us
+            </a>
+            <a href="/#ingredients" className="font-['Lato'] text-[#8B5A2B] hover:text-[#6D4522] font-medium">
+              Ingredients
+            </a>
+            <a href="/#contact" className="font-['Lato'] text-[#8B5A2B] hover:text-[#6D4522] font-medium">
+              Contact
+            </a>
+            <Link href="/cart">
+              <Button variant="default" className="bg-[#8B5A2B] hover:bg-[#6D4522] text-white">
+                <ShoppingCart className="h-4 w-4 mr-2" /> 
+                Cart ({cartItemCount})
+              </Button>
+            </Link>
+          </nav>
+        </div>
+        
+        {/* Mobile navigation */}
+        <nav className={`${mobileMenuOpen ? 'block' : 'hidden'} mt-4 pb-4 md:hidden`}>
+          <div className="flex flex-col space-y-3">
+            <Link href="/" className="font-['Lato'] text-[#8B5A2B] hover:text-[#6D4522] font-medium">
+              Home
+            </Link>
+            <Link href="/products" className="font-['Lato'] text-[#8B5A2B] hover:text-[#6D4522] font-medium">
+              Our Cookies
+            </Link>
+            <a href="/#about" className="font-['Lato'] text-[#8B5A2B] hover:text-[#6D4522] font-medium">
+              About Us
+            </a>
+            <a href="/#ingredients" className="font-['Lato'] text-[#8B5A2B] hover:text-[#6D4522] font-medium">
+              Ingredients
+            </a>
+            <a href="/#contact" className="font-['Lato'] text-[#8B5A2B] hover:text-[#6D4522] font-medium">
+              Contact
+            </a>
+            <Link href="/cart">
+              <Button variant="default" className="bg-[#8B5A2B] hover:bg-[#6D4522] text-white w-full justify-center">
+                <ShoppingCart className="h-4 w-4 mr-2" /> 
+                Cart ({cartItemCount})
+              </Button>
+            </Link>
+          </div>
+        </nav>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
