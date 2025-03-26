@@ -102,7 +102,7 @@ const ProductPage = () => {
       id: product.id,
       name: product.name,
       price: Number(product.salePrice || product.price),
-      image: product.imageSrc,
+      image: getProductImage(product),
       quantity
     });
 
