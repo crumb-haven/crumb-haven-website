@@ -1,16 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart } from "lucide-react";
-import { useCartStore } from "@/lib/cart-store";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [location] = useLocation();
-  const { items } = useCartStore();
-
-  const cartItemCount = items.reduce((total, item) => total + item.quantity, 0);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -70,12 +65,11 @@ const Header = () => {
             <a href="/#contact" className="font-['Lato'] text-[#8B5A2B] hover:text-[#6D4522] font-medium">
               Contact
             </a>
-            <Link href="/cart">
+            <a href="/#contact">
               <Button variant="default" className="bg-[#8B5A2B] hover:bg-[#6D4522] text-white">
-                <ShoppingCart className="h-4 w-4 mr-2" /> 
-                Cart ({cartItemCount})
+                Get in Touch
               </Button>
-            </Link>
+            </a>
           </nav>
         </div>
         
@@ -97,12 +91,11 @@ const Header = () => {
             <a href="/#contact" className="font-['Lato'] text-[#8B5A2B] hover:text-[#6D4522] font-medium">
               Contact
             </a>
-            <Link href="/cart">
+            <a href="/#contact">
               <Button variant="default" className="bg-[#8B5A2B] hover:bg-[#6D4522] text-white w-full justify-center">
-                <ShoppingCart className="h-4 w-4 mr-2" /> 
-                Cart ({cartItemCount})
+                Get in Touch
               </Button>
-            </Link>
+            </a>
           </div>
         </nav>
       </div>

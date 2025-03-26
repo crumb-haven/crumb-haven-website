@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Check, ChevronLeft } from "lucide-react";
-import { Product, ProductFeature } from "@shared/schema";
+import { Product } from "@shared/schema";
 // Import the necessary attached assets
 import almondOatImage from "@assets/Almond Oat Lifestyle.png";
 import chocochipBrownieImage from "@assets/Chocochip Brownie.png";
@@ -152,7 +152,11 @@ const ProductPage = () => {
                   </ul>
                 </div>
                 
-
+                <Link href="/contact">
+                  <Button className="bg-[#8B5A2B] hover:bg-[#6D4522] text-white py-2 px-6 rounded-md text-lg">
+                    Contact Us
+                  </Button>
+                </Link>
                 
                 <div className="mt-8 border-t border-[#F0E6D6] pt-6">
                   <div className="flex items-center space-x-3 text-sm text-[#4A3520]">

@@ -1,24 +1,27 @@
 import { motion } from "framer-motion";
+import featuresImage from "@assets/CRUMB HAVEN FEATURES.png";
 
 const Features = () => {
   const features = [
     {
-      icon: "fas fa-seedling",
-      title: "Natural Ingredients",
-      description: "Only premium ingredients like almonds, oats, honey, and Kodo millet - never any artificial additives.",
-      color: "bg-[#9BBC91]"
+      title: "100% Pure Maple Syrup",
+      description: "We use real maple syrup for natural sweetness in many of our cookies.",
+      color: "bg-[#8B5A2B]"
     },
     {
-      icon: "fas fa-oil-can",
-      title: "Pure Desi Ghee",
-      description: "Crafted with authentic desi ghee for rich flavor - we never use palm oil or hydrogenated fats.",
-      color: "bg-[#F2C94C]"
+      title: "Palm Oil Free",
+      description: "We never use palm oil, only pure desi ghee for rich, authentic flavor.",
+      color: "bg-[#8B5A2B]"
     },
     {
-      icon: "fas fa-heart",
-      title: "Health Conscious",
-      description: "Zero trans fat, no preservatives, and many options with no refined sugar or maida.",
-      color: "bg-[#A87C4F]"
+      title: "No Added Preservatives",
+      description: "Our cookies are free from artificial preservatives for a truly natural treat.",
+      color: "bg-[#8B5A2B]"
+    },
+    {
+      title: "Trans Fats Free",
+      description: "Zero trans fats in all our products for a healthier indulgence experience.",
+      color: "bg-[#8B5A2B]"
     }
   ];
 
@@ -54,8 +57,22 @@ const Features = () => {
           </p>
         </div>
         
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="flex justify-center mb-16"
+        >
+          <img 
+            src={featuresImage} 
+            alt="Crumb Haven Features" 
+            className="max-w-full md:max-w-3xl mx-auto"
+          />
+        </motion.div>
+
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -67,9 +84,6 @@ const Features = () => {
               className="bg-[#F9F5EB] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center"
               variants={itemVariants}
             >
-              <div className={`${feature.color} w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4`}>
-                <i className={`${feature.icon} text-white text-2xl`}></i>
-              </div>
               <h3 className="font-['Playfair_Display'] text-xl font-semibold text-[#8B5A2B] mb-2">
                 {feature.title}
               </h3>
