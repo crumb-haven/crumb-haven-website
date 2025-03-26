@@ -110,7 +110,20 @@ export class MemStorage implements IStorage {
   
   async createProduct(insertProduct: InsertProduct): Promise<Product> {
     const id = this.productCurrentId++;
-    const product: Product = { ...insertProduct, id };
+    // Make sure all the required fields are present with correct types
+    const product: Product = {
+      id,
+      name: insertProduct.name,
+      slug: insertProduct.slug,
+      description: insertProduct.description,
+      shortDescription: insertProduct.shortDescription,
+      price: insertProduct.price,
+      salePrice: insertProduct.salePrice || null,
+      imageSrc: insertProduct.imageSrc,
+      badge: insertProduct.badge || null,
+      isFeatured: insertProduct.isFeatured || null,
+      category: insertProduct.category
+    };
     this.products.set(id, product);
     return product;
   }
@@ -124,7 +137,11 @@ export class MemStorage implements IStorage {
   
   async createProductFeature(insertFeature: InsertProductFeature): Promise<ProductFeature> {
     const id = this.productFeatureCurrentId++;
-    const feature: ProductFeature = { ...insertFeature, id };
+    const feature: ProductFeature = {
+      id,
+      productId: insertFeature.productId,
+      feature: insertFeature.feature
+    };
     this.productFeatures.set(id, feature);
     return feature;
   }
@@ -136,7 +153,14 @@ export class MemStorage implements IStorage {
   
   async createTestimonial(insertTestimonial: InsertTestimonial): Promise<Testimonial> {
     const id = this.testimonialCurrentId++;
-    const testimonial: Testimonial = { ...insertTestimonial, id };
+    const testimonial: Testimonial = {
+      id,
+      name: insertTestimonial.name,
+      location: insertTestimonial.location,
+      rating: insertTestimonial.rating,
+      review: insertTestimonial.review,
+      initials: insertTestimonial.initials
+    };
     this.testimonials.set(id, testimonial);
     return testimonial;
   }
@@ -144,7 +168,14 @@ export class MemStorage implements IStorage {
   // Contact Submissions
   async createContactSubmission(insertSubmission: InsertContactSubmission): Promise<ContactSubmission> {
     const id = this.contactSubmissionCurrentId++;
-    const submission: ContactSubmission = { ...insertSubmission, id };
+    const submission: ContactSubmission = {
+      id,
+      name: insertSubmission.name,
+      email: insertSubmission.email,
+      subject: insertSubmission.subject,
+      message: insertSubmission.message,
+      createdAt: insertSubmission.createdAt
+    };
     this.contactSubmissions.set(id, submission);
     return submission;
   }
@@ -152,7 +183,11 @@ export class MemStorage implements IStorage {
   // Newsletter Subscriptions
   async createNewsletterSubscription(insertSubscription: InsertNewsletterSubscription): Promise<NewsletterSubscription> {
     const id = this.newsletterSubscriptionCurrentId++;
-    const subscription: NewsletterSubscription = { ...insertSubscription, id };
+    const subscription: NewsletterSubscription = {
+      id,
+      email: insertSubscription.email,
+      createdAt: insertSubscription.createdAt
+    };
     this.newsletterSubscriptions.set(id, subscription);
     return subscription;
   }
