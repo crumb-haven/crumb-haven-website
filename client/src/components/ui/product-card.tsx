@@ -1,7 +1,5 @@
 import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
 import { Product } from "@shared/schema";
-import { useCartStore } from "@/lib/cart-store";
 // Import the necessary attached assets
 import almondOatImage from "@assets/Almond Oat Lifestyle.png";
 import chocochipBrownieImage from "@assets/Chocochip Brownie.png";
@@ -13,18 +11,6 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ product }: ProductCardProps) => {
-  const addToCart = useCartStore(state => state.addItem);
-
-  const handleAddToCart = () => {
-    addToCart({
-      id: product.id,
-      name: product.name,
-      price: Number(product.salePrice || product.price),
-      image: getProductImage(product),
-      quantity: 1
-    });
-  };
-
   const productTags = (product: Product) => {
     const tags = [];
     
@@ -102,18 +88,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
               {tag}
             </span>
           ))}
-        </div>
-        <div className="mt-4 flex justify-between items-center">
-          <span className="font-bold text-[#8B5A2B] text-lg">
-            ₹{product.salePrice || product.price}
-          </span>
-          <Button 
-            size="sm" 
-            className="bg-[#8B5A2B] hover:bg-[#6D4522] text-white text-sm"
-            onClick={handleAddToCart}
-          >
-            Add to Cart
-          </Button>
         </div>
       </div>
     </div>

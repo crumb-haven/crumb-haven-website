@@ -1,13 +1,10 @@
-import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useParams, Link, useLocation } from "wouter";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Check, ShoppingCart, ChevronLeft } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+import { Check, ChevronLeft } from "lucide-react";
 import { Product, ProductFeature } from "@shared/schema";
-import { useCartStore } from "@/lib/cart-store";
 // Import the necessary attached assets
 import almondOatImage from "@assets/Almond Oat Lifestyle.png";
 import chocochipBrownieImage from "@assets/Chocochip Brownie.png";
@@ -21,10 +18,7 @@ interface ProductResponse {
 
 const ProductPage = () => {
   const { slug } = useParams();
-  const [quantity, setQuantity] = useState(1);
   const [, navigate] = useLocation();
-  const { toast } = useToast();
-  const addToCart = useCartStore(state => state.addItem);
 
   const { data, isLoading, error } = useQuery<ProductResponse>({
     queryKey: [`/api/products/${slug}`],
@@ -87,30 +81,7 @@ const ProductPage = () => {
     return almondOatImage;
   };
 
-  const increaseQuantity = () => {
-    setQuantity(prev => prev + 1);
-  };
-
-  const decreaseQuantity = () => {
-    if (quantity > 1) {
-      setQuantity(prev => prev - 1);
-    }
-  };
-
-  const handleAddToCart = () => {
-    addToCart({
-      id: product.id,
-      name: product.name,
-      price: Number(product.salePrice || product.price),
-      image: getProductImage(product),
-      quantity
-    });
-
-    toast({
-      title: "Added to cart",
-      description: `${quantity} × ${product.name} added to your cart`,
-    });
-  };
+  // No cart functionality needed
 
   return (
     <>
@@ -165,23 +136,6 @@ const ProductPage = () => {
                   {product.name}
                 </h1>
                 
-                <div className="flex items-center space-x-4 mb-6">
-                  {product.price !== product.salePrice && (
-                    <span className="text-sm text-[#4A3520] opacity-70 line-through">
-                      ₹{product.price}
-                    </span>
-                  )}
-                  <span className="text-2xl font-bold text-[#8B5A2B]">
-                    ₹{product.salePrice || product.price}
-                  </span>
-                  
-                  {product.price !== product.salePrice && (
-                    <span className="bg-[#A87C4F] text-white text-xs px-2 py-1 rounded">
-                      Save ₹{Number(product.price) - Number(product.salePrice)}
-                    </span>
-                  )}
-                </div>
-                
                 <p className="text-[#4A3520] mb-6 leading-relaxed">
                   {product.description}
                 </p>
@@ -198,31 +152,7 @@ const ProductPage = () => {
                   </ul>
                 </div>
                 
-                <div className="mb-6">
-                  <h3 className="text-lg font-semibold mb-3">Quantity:</h3>
-                  <div className="flex items-center space-x-3">
-                    <button 
-                      className="w-8 h-8 flex items-center justify-center border-2 border-[#8B5A2B] rounded text-[#8B5A2B] hover:bg-[#8B5A2B] hover:text-white transition-colors"
-                      onClick={decreaseQuantity}
-                    >
-                      -
-                    </button>
-                    <span className="w-12 text-center font-semibold">{quantity}</span>
-                    <button 
-                      className="w-8 h-8 flex items-center justify-center border-2 border-[#8B5A2B] rounded text-[#8B5A2B] hover:bg-[#8B5A2B] hover:text-white transition-colors"
-                      onClick={increaseQuantity}
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-                
-                <Button 
-                  className="bg-[#8B5A2B] hover:bg-[#6D4522] text-white py-2 px-6 rounded-md text-lg"
-                  onClick={handleAddToCart}
-                >
-                  <ShoppingCart className="h-5 w-5 mr-2" /> Add to Cart
-                </Button>
+
                 
                 <div className="mt-8 border-t border-[#F0E6D6] pt-6">
                   <div className="flex items-center space-x-3 text-sm text-[#4A3520]">
