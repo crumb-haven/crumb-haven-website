@@ -38,7 +38,11 @@ const Header = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <h1 className="font-['Playfair_Display'] text-2xl font-bold text-[#8B5A2B] md:text-3xl">Crumb Haven</h1>
+            <img 
+              src="/assets/images/Crumb Haven-Logo JPG.jpg" 
+              alt="Crumb Haven Logo" 
+              className="h-12 mr-2" 
+            />
           </Link>
           
           {/* Mobile menu button */}
