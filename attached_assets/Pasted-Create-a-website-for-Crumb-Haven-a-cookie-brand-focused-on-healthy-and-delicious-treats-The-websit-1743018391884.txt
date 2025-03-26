@@ -1,0 +1,125 @@
+Create a website for Crumb Haven, a cookie brand focused on healthy and delicious treats. The website's layout should closely resemble https://www.thebakersdozen.in/, including the navigation, product display, and overall aesthetic.
+
+Brand Information (Use in the 'About Us' or similar section):
+
+Crumb Haven believes indulgence should be as nourishing as it is delicious. Our cookies are crafted with Pure Desi Ghee, Zero Preservatives, and No Trans Fats, ensuring every bite delivers authentic flavour with clean, wholesome ingredients. We replace processed additives with nature’s best, striking the perfect balance between taste and well-being. Every cookie is a testament to our commitment—where tradition meets health, and flavour never takes a backseat.
+
+High-Impact Bullet Points (Use prominently on the homepage, potentially as a banner or section highlights):
+
+Pure Desi Ghee Goodness – No Palm Oil, ensuring a rich, authentic taste
+
+Zero Trans Fat & No Preservatives – Clean, guilt-free snacking
+
+Wholesome Ingredients – Almonds, oats, honey, Kodo millet, and high-quality cocoa
+
+Perfect for All Occasions – Ideal with tea, as an energy booster, or on-the-go
+
+Clean Label & Health-Conscious – Rich taste, mindful ingredients
+
+Product Information (Create individual product pages for each):
+
+1. Almond Oat Cookies
+
+Ecommerce Product Title: Crumb Haven Almond Oat Cookies | No Maida, No Palm Oil, No Preservatives | Made with Pure Desi Ghee | Healthy Snack | 100g
+
+Flipkart Product Title: Almond Oat Cookies | No Maida, No Preservatives | No Palm Oil – Only Desi Ghee
+
+Product Description: A wholesome blend of nutrient-rich oats, premium almonds, and whole wheat flour, our Almond Oat Cookies offer the perfect balance of taste and health. Made exclusively with pure Desi ghee—never palm oil—these cookies bring home a rich, authentic flavour while staying free from trans fats and preservatives. Whether you're looking for a guilt-free snack or a nourishing treat, this clean-label delight ensures pure indulgence with every bite.
+
+Key Features:
+
+Pure Desi Ghee – No palm oil, just authentic flavour
+
+Whole Wheat Goodness – No maida, just wholesome grains
+
+Zero Trans Fat, No Palm Oil, No Preservatives – Clean, guilt-free indulgence
+
+Nutrient-Dense – Infused with almonds and oats for sustained energy
+
+Traditionally Inspired, Health-Conscious – Crafted for taste and wellness
+
+2. Chocochip Brownie Cookies
+
+Ecommerce Product Title: Crumb Haven Chocochip Brownie Cookies | Zero Trans Fat, No Preservatives | No Palm Oil– Only Desi Ghee | Guilt-Free Indulgence | 100g
+
+Flipkart Product Title: Chocochip Brownie Cookies | No Preservatives | No Palm Oil– Only Desi Ghee
+
+Product Description: For those who crave intense chocolate flavour with a crunch, our Choco Chip Brownie Cookies are the perfect treat. Combining the fudgy richness of brownies with crispy choco chips, these cookies redefine indulgence without compromising on health. Made with pure Desi ghee (never palm oil), zero trans fats, and no preservatives, each bite is a decadent yet guilt-free delight.
+
+Key Features:
+
+Decadent Brownie Taste – Fudgy, chocolaty, and satisfying
+
+Pure Desi Ghee Goodness – No palm oil, only authentic ingredients
+
+Zero Trans Fat, No Preservatives, No Palm Oil – Made for guilt-free indulgence
+
+Crispy Choco Chips – Perfectly balanced texture
+
+Clean Label & Health-Conscious – Rich taste, mindful ingredients
+
+3. Kodo Millet Cookies
+
+Ecommerce Product Title: Crumb Haven Kodo Millet Cookies | Wheat-Free | No Refined Sugar, No Preservatives | No Palm Oil– Only Desi Ghee | High Protein & Fiber | 100g
+
+Flipkart Product Title: Kodo Millet Cookies | Wheat-Free | No Refined Sugar | No Palm Oil–Only Desi Ghee
+
+Product Description: Power-packed with protein, fiber, and ancient grain goodness, our Kodo Millet Cookies are completely wheat-free, making them the perfect choice for gluten-sensitive or health-conscious consumers. Crafted with pure Desi ghee, zero refined sugar, and no preservatives, these cookies offer a light yet satisfying crunch while promoting better digestion and sustained energy.
+
+Key Features:
+
+Wheat-Free & Wholesome – Perfect for mindful snackers
+
+Protein & Fiber-Rich – Powered by Kodo millet for better health
+
+Pure Desi Ghee Flavour – No palm oil, only traditional richness
+
+No Refined Sugar, No Preservatives, No Palm Oil – Naturally nourishing
+
+Balanced & Guilt-Free – The perfect mix of taste and nutrition
+
+4. Honey Oat Cookies
+
+Ecommerce Product Title: Crumb Haven Honey Oat Cookies | No Palm Oil– Only Desi Ghee | No Preservatives | Zero Trans Fat | 100g
+
+Flipkart Product Title: Honey Oat Cookies | No Trans Fat, No Preservatives, No Palm Oil– Only Desi Ghee
+
+Product Description: Infused with the natural sweetness of honey and the nutritional power of oats, our Honey Oat Cookies deliver the perfect harmony of taste and health. Made with pure Desi ghee, zero trans fats, and no preservatives, these cookies are a wholesome snack that supports your well-being while satisfying your sweet cravings.
+
+Key Features:
+
+Hearty Oats for Sustained Energy – Wholesome and filling
+
+Made with Pure Desi Ghee – No palm oil, just authentic taste
+
+No Palm Oil, No Preservatives, Zero Trans Fat – Clean-label snacking
+
+Perfect Balance of Health & Indulgence – Guilt-free treat
+
+Clean Label & Health-Conscious – Rich taste, mindful ingredients
+
+Additional Instructions:
+
+Color Palette: Suggest a warm and inviting color palette, perhaps using earthy tones and natural hues to reflect the wholesome ingredients. Consider incorporating colors associated with Desi Ghee and the specific ingredients in each cookie (e.g., brown for chocolate, golden for honey).
+
+Images: Use high-quality images of the cookies that showcase their texture and ingredients. Consider lifestyle shots that show people enjoying the cookies in various settings. If possible use images that convey a sense of tradition and natural goodness.
+
+Call to Action: Prominent call-to-action buttons (e.g., "Shop Now," "Add to Cart") on product pages and throughout the site.
+
+Contact Information: Include a contact form or email address for customer inquiries.
+
+Mobile Responsiveness: Ensure the website is fully responsive and looks great on all devices (desktops, tablets, and smartphones).
+
+Social Media Integration: Include links to Crumb Haven's social media profiles.
+
+SEO Optimization: Ensure the website is optimized for search engines with relevant keywords (e.g., "healthy cookies," "desi ghee cookies," "no preservatives")."
+
+Important Considerations when using the AI:
+
+Image Quality: The AI might generate placeholder images. Be prepared to replace these with high-quality, professional photos of the Crumb Haven cookies.
+
+Content Refinement: The AI-generated content might need some editing and refinement to perfectly capture the brand's voice and messaging. Review and adjust the text as needed.
+
+Layout Adjustments: While the prompt asks for a layout similar to The Baker's Dozen, you might need to manually tweak the layout to get it exactly right. Pay attention to spacing, font sizes, and overall visual appeal.
+
+E-commerce Functionality: Ensure that the e-commerce portion of the website allows for easy product browsing, adding to cart, checkout, and payment processing.
