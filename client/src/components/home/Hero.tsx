@@ -16,7 +16,7 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
           >
             <h1 className="font-['Playfair_Display'] text-4xl md:text-5xl lg:text-6xl font-bold text-[#8B5A2B] leading-tight">
-              Welcome to Crumb Haven – Wholesome Cookies Made with Pure Desi Ghee
+              Indulgence <span className="text-[#D9B03D] italic">Never</span> Tasted So Healthy
             </h1>
             <p className="mt-4 text-lg md:text-xl text-[#4A3520] opacity-90">
               Cookies crafted with pure desi ghee, zero preservatives, and no trans fats – where tradition meets wellness.
