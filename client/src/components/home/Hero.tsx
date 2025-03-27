@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import almondOatImage from "@assets/Almond Oat Lifestyle.png";
 
 const Hero = () => {
   return (
@@ -37,7 +38,7 @@ const Hero = () => {
             <div className="mt-8 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Link href="/products">
                 <Button className="w-full sm:w-auto bg-[#8B5A2B] hover:bg-[#6D4522] text-white">
-                  Shop Now
+                  View Our Products
                 </Button>
               </Link>
               <a href="#about">
@@ -54,8 +55,8 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <img 
-              src="https://images.unsplash.com/photo-1629324482344-58ac79e27737?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-              alt="Assorted cookies on a wooden tray" 
+              src={almondOatImage} 
+              alt="Almond Oat Cookies with Crumb Haven packaging" 
               className="rounded-lg shadow-lg w-full object-cover transition-transform duration-300 hover:scale-[1.02]"
               width="600" 
               height="400"
