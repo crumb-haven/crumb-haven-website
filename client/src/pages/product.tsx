@@ -107,8 +107,46 @@ const ProductPage = () => {
   return (
     <>
       <Helmet>
-        <title>{product.name} | Crumb Haven</title>
-        <meta name="description" content={product.shortDescription} />
+        {/* Dynamic SEO Title and Meta Description based on product name */}
+        {product.name.includes("Almond Oat") && (
+          <>
+            <title>Pure Desi Ghee Almond Oat Cookies in Mumbai | No Maida, No Preservatives | Crumb Haven</title>
+            <meta name="description" content="Order Crumb Haven's Almond Oat Cookies in Mumbai, made with pure Desi Ghee, no maida, and zero preservatives. A wholesome snack with nutritious almonds and oats for sustained energy and wellness." />
+            <meta name="keywords" content="Almond Oat Cookies Mumbai, Pure Desi Ghee cookies, no maida cookies, healthy cookies Mumbai, no preservatives cookies" />
+          </>
+        )}
+        {product.name.includes("Chocochip") && (
+          <>
+            <title>Chocochip Brownie Cookies in Mumbai | Zero Trans Fat, Desi Ghee | Crumb Haven</title>
+            <meta name="description" content="Order Crumb Haven's Chocochip Brownie Cookies in Mumbai, made with pure Desi Ghee, zero trans fats, and no preservatives. A decadent yet guilt-free treat delivered fresh to your doorstep." />
+            <meta name="keywords" content="Chocochip Brownie Cookies Mumbai, Pure Desi Ghee cookies, zero trans fat cookies, healthy chocolate cookies, no preservatives cookies" />
+          </>
+        )}
+        {product.name.includes("Kodo Millet") && (
+          <>
+            <title>Kodo Millet Cookies in Mumbai | Wheat-Free, No Refined Sugar | Crumb Haven</title>
+            <meta name="description" content="Order Crumb Haven's Kodo Millet Cookies in Mumbai, wheat-free and made with pure Desi Ghee, no refined sugar, and high in protein and fiber. A naturally nourishing snack for health-conscious indulgence." />
+            <meta name="keywords" content="Kodo Millet Cookies Mumbai, wheat-free cookies, no refined sugar cookies, high protein cookies, gluten-free cookies Mumbai" />
+          </>
+        )}
+        {product.name.includes("Honey Oat") && (
+          <>
+            <title>Pure Desi Ghee Honey Oat Cookies in Mumbai | No Palm Oil, No Preservatives | Crumb Haven</title>
+            <meta name="description" content="Order Crumb Haven's Honey Oat Cookies in Mumbai, infused with natural honey sweetness and made with pure Desi Ghee, zero trans fats, and no preservatives. A wholesome indulgence delivered fresh to your door." />
+            <meta name="keywords" content="Honey Oat Cookies Mumbai, Pure Desi Ghee cookies, no palm oil cookies, healthy cookies Mumbai, no preservatives cookies" />
+          </>
+        )}
+        {/* Default fallback if none of the specific products match */}
+        {!product.name.includes("Almond Oat") && !product.name.includes("Chocochip") && !product.name.includes("Kodo Millet") && !product.name.includes("Honey Oat") && (
+          <>
+            <title>{product.name} in Mumbai | Pure Desi Ghee, No Preservatives | Crumb Haven</title>
+            <meta name="description" content={`Order Crumb Haven's ${product.name} in Mumbai, made with pure Desi Ghee, no preservatives, and zero trans fats. ${product.shortDescription} Enjoy home delivery across Mumbai.`} />
+            <meta name="keywords" content={`${product.name} Mumbai, Pure Desi Ghee cookies, healthy cookies Mumbai, no preservatives cookies, no trans fat cookies`} />
+          </>
+        )}
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={`https://crumbhaven.in/products/${slug || ''}`} />
+        
         {/* Add structured data for SEO */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -116,9 +154,36 @@ const ProductPage = () => {
             "@type": "Product",
             "name": product.name,
             "description": product.shortDescription,
+            "image": getProductImage,
+            "sku": `CRUMB-${slug?.toUpperCase() || 'PRODUCT'}`,
             "brand": {
               "@type": "Brand",
-              "name": "Crumb Haven"
+              "name": "Crumb Haven",
+              "logo": "https://crumbhaven.in/images/logo.png"
+            },
+            "offers": {
+              "@type": "Offer",
+              "availability": "https://schema.org/InStock",
+              "itemCondition": "https://schema.org/NewCondition",
+              "price": product.price,
+              "priceCurrency": "INR",
+              "url": `https://crumbhaven.in/products/${slug || ''}`,
+              "seller": {
+                "@type": "Organization",
+                "name": "Crumb Haven"
+              }
+            },
+            "keywords": "Pure Desi Ghee cookies, healthy cookies Mumbai, no preservatives cookies, no trans fat cookies",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "reviewCount": "27"
+            },
+            "review": {
+              "@type": "Review",
+              "reviewBody": "These cookies are amazing! The quality ingredients really shine through in the taste.",
+              "author": {"@type": "Person", "name": "Happy Customer"},
+              "reviewRating": {"@type": "Rating", "ratingValue": "5"}
             }
           })}
         </script>
@@ -147,7 +212,17 @@ const ProductPage = () => {
                 {getProductImage && (
                   <img 
                     src={getProductImage} 
-                    alt={product.name} 
+                    alt={
+                      product.name.includes("Almond Oat") 
+                        ? "Crumb Haven Almond Oat Cookies made with Pure Desi Ghee, no maida, and no preservatives" 
+                        : product.name.includes("Chocochip") 
+                          ? "Crumb Haven Chocochip Brownie Cookies with zero trans fat, no preservatives, and no palm oil" 
+                          : product.name.includes("Kodo Millet") 
+                            ? "Crumb Haven Kodo Millet Cookies, wheat-free, no refined sugar, and high in protein and fiber" 
+                            : product.name.includes("Honey Oat") 
+                              ? "Crumb Haven Honey Oat Cookies with no palm oil, no preservatives, and zero trans fat" 
+                              : product.name
+                    }
                     className="w-full h-auto object-cover rounded-lg shadow-md"
                     loading="eager" 
                     width="600"

@@ -16,7 +16,7 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
           >
             <h1 className="font-['Playfair_Display'] text-4xl md:text-5xl lg:text-6xl font-bold text-[#8B5A2B] leading-tight">
-              Indulgence <span className="text-[#D9B03D] italic">Never</span> Tasted So Healthy
+              Welcome to Crumb Haven – Wholesome Cookies Made with Pure Desi Ghee
             </h1>
             <p className="mt-4 text-lg md:text-xl text-[#4A3520] opacity-90">
               Cookies crafted with pure desi ghee, zero preservatives, and no trans fats – where tradition meets wellness.
@@ -56,7 +56,7 @@ const Hero = () => {
           >
             <img 
               src={almondOatImage} 
-              alt="Almond Oat Cookies with Crumb Haven packaging" 
+              alt="Crumb Haven Almond Oat Cookies made with Pure Desi Ghee, no maida, and no preservatives" 
               className="rounded-lg shadow-lg w-full object-cover transition-transform duration-300 hover:scale-[1.02]"
               width="600" 
               height="400"

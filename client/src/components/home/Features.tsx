@@ -49,10 +49,10 @@ const Features = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[#8B5A2B] mb-4">
-            Why Choose Crumb Haven?
+            Why Choose Crumb Haven's Desi Ghee Cookies in Mumbai?
           </h2>
           <p className="max-w-2xl mx-auto text-[#4A3520] opacity-80">
-            We believe indulgence should be as nourishing as it is delicious. Our cookies strike the perfect balance between taste and well-being.
+            Our wholesome cookies are made with pure desi ghee, zero preservatives, and no trans fats. Each bite delivers authentic flavor with clean, nutrient-rich ingredients - the perfect balance of taste and wellness.
           </p>
         </div>
 

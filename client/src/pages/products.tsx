@@ -92,18 +92,41 @@ const Products = () => {
   return (
     <>
       <Helmet>
-        <title>Our Cookies | Crumb Haven</title>
-        <meta name="description" content="Explore our range of healthy and delicious cookies made with pure desi ghee, zero preservatives, and no trans fats." />
+        <title>Pure Desi Ghee Cookies in Mumbai | No Preservatives, Healthy Indulgence | Crumb Haven</title>
+        <meta name="description" content="Explore Crumb Haven's range of healthy cookies in Mumbai made with pure desi ghee, zero preservatives, and no trans fats. We offer Almond Oat, Honey Oat, Kodo Millet and more wholesome varieties. Order online for delivery across Mumbai." />
+        <meta name="keywords" content="Pure Desi Ghee cookies Mumbai, healthy cookies online, no preservatives cookies, no palm oil cookies, gluten-free cookies Mumbai, whole grain cookies" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://crumbhaven.in/products" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org/",
+            "@type": "ItemList",
+            "itemListElement": products?.map((product, index) => ({
+              "@type": "ListItem",
+              "position": index + 1,
+              "item": {
+                "@type": "Product",
+                "name": product.name,
+                "description": product.shortDescription,
+                "url": `https://crumbhaven.in/products/${product.slug}`,
+                "brand": {
+                  "@type": "Brand",
+                  "name": "Crumb Haven"
+                }
+              }
+            })) || []
+          })}
+        </script>
       </Helmet>
       
       <div className="bg-[#F9F5EB] py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h1 className="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[#8B5A2B] mb-4">
-              Our Cookies
+              Pure Desi Ghee Cookies in Mumbai – Healthy & Delicious Collection
             </h1>
             <p className="max-w-2xl mx-auto text-[#4A3520] opacity-80">
-              Discover our range of cookies, crafted with pure desi ghee and wholesome ingredients for the perfect balance of taste and health.
+              Discover our range of wholesome cookies, crafted with pure desi ghee, zero preservatives, and no trans fats. Each variety offers a perfect balance of authentic flavor and nourishing ingredients for guilt-free indulgence.
             </p>
           </div>
           

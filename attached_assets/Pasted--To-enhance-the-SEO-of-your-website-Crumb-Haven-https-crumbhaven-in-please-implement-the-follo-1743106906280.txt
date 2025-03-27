@@ -1,0 +1,104 @@
+​To enhance the SEO of your website, Crumb Haven (https://crumbhaven.in), please implement the following updates:​
+
+1. Title Tag: Set the title tag to:
+
+html
+Copy
+Edit
+<title>Crumb Haven | Pure Desi Ghee Cookies in Mumbai – No Preservatives, No Trans Fats</title>
+2. Meta Description: Add the following meta description:
+
+html
+Copy
+Edit
+<meta name="description" content="Indulge in Crumb Haven's wholesome cookies made with Pure Desi Ghee, zero preservatives, and no trans fats. Enjoy authentic flavors with clean, nourishing ingredients. Order online for delivery in Mumbai.">
+3. Meta Keywords (Optional): Include relevant meta keywords:
+
+html
+Copy
+Edit
+<meta name="keywords" content="Pure Desi Ghee cookies, healthy cookies Mumbai, no preservatives cookies, no trans fat cookies, Crumb Haven bakery, online cookie delivery Mumbai">
+4. Meta Robots Tag: Ensure the page is indexed and links are followed:
+
+html
+Copy
+Edit
+<meta name="robots" content="index, follow">
+5. Header Tags: Structure the homepage content with appropriate header tags:
+
+html
+Copy
+Edit
+<h1>Welcome to Crumb Haven – Wholesome Cookies Made with Pure Desi Ghee</h1>
+<h2>Our Commitment to Health and Flavor</h2>
+<h3>Pure Desi Ghee Goodness – No Palm Oil</h3>
+<h3>Zero Trans Fat & No Preservatives – Guilt-Free Snacking</h3>
+<h3>Wholesome Ingredients – Almonds, Oats, Honey, Kodo Millet, and High-Quality Cocoa</h3>
+<h3>Perfect for All Occasions – Ideal with Tea, as an Energy Booster, or On-the-Go</h3>
+<h3>Clean Label & Health-Conscious – Rich Taste, Mindful Ingredients</h3>
+6. Image Alt Text: Add descriptive alt text to images:
+
+html
+Copy
+Edit
+<img src="almond-oat-cookies.jpg" alt="Crumb Haven Almond Oat Cookies made with Pure Desi Ghee, no maida, and no preservatives">
+<img src="chocochip-brownie-cookies.jpg" alt="Crumb Haven Chocochip Brownie Cookies with zero trans fat, no preservatives, and no palm oil">
+<img src="kodo-millet-cookies.jpg" alt="Crumb Haven Kodo Millet Cookies, wheat-free, no refined sugar, and high in protein and fiber">
+<img src="honey-oat-cookies.jpg" alt="Crumb Haven Honey Oat Cookies with no palm oil, no preservatives, and zero trans fat">
+7. Canonical Tag: Specify the preferred URL:
+
+html
+Copy
+Edit
+<link rel="canonical" href="https://crumbhaven.in/">
+Connecticut Digital Agency
++7
+WebFX
++7
+Reddit
++7
+
+8. Open Graph Tags: Enhance social media sharing with Open Graph tags:
+
+html
+Copy
+Edit
+<meta property="og:title" content="Crumb Haven | Pure Desi Ghee Cookies in Mumbai – No Preservatives, No Trans Fats">
+<meta property="og:description" content="Indulge in Crumb Haven's wholesome cookies made with Pure Desi Ghee, zero preservatives, and no trans fats. Enjoy authentic flavors with clean, nourishing ingredients. Order online for delivery in Mumbai.">
+<meta property="og:image" content="https://crumbhaven.in/images/og-image.jpg">
+<meta property="og:url" content="https://crumbhaven.in/">
+9. Mobile Responsiveness and Page Speed: Ensure the website is mobile-friendly and optimize page load times by compressing images and utilizing browser caching.​
+
+10. Local SEO Considerations: Incorporate location-specific keywords throughout the website content, such as "healthy cookies in Mumbai" and "Mumbai bakery," to enhance local search visibility. Additionally, create a Google Business Profile with accurate business information, including address, phone number, and operating hours.​
+
+11. Product Page Optimization: For each product page, include unique title tags, meta descriptions, and header tags that highlight the key features of the products. For example:​
+
+Almond Oat Cookies:
+
+html
+Copy
+Edit
+<title>Almond Oat Cookies | No Maida, No Palm Oil, No Preservatives | Crumb Haven</title>
+<meta name="description" content="Enjoy Crumb Haven's Almond Oat Cookies, crafted with pure Desi Ghee, no maida, and zero preservatives. A wholesome snack with almonds and oats for sustained energy.">
+Chocochip Brownie Cookies:
+
+html
+Copy
+Edit
+<title>Chocochip Brownie Cookies | Zero Trans Fat, No Preservatives | Crumb Haven</title>
+<meta name="description" content="Indulge in Crumb Haven's Chocochip Brownie Cookies, made with pure Desi Ghee, zero trans fats, and no preservatives. A decadent yet guilt-free treat.">
+Kodo Millet Cookies:
+
+html
+Copy
+Edit
+<title>Kodo Millet Cookies | Wheat-Free, No Refined Sugar | Crumb Haven</title>
+<meta name="description" content="Try Crumb Haven's Kodo Millet Cookies, wheat-free and made with pure Desi Ghee, no refined sugar, and high in protein and fiber. A naturally nourishing snack.">
+Honey Oat Cookies:
+
+html
+Copy
+Edit
+<title>Honey Oat Cookies | No Palm Oil, No Preservatives | Crumb Haven</title>
+<meta name="description" content="Savor Crumb Haven's Honey Oat Cookies, infused with natural honey sweetness and made with pure Desi Ghee, zero trans fats, and no preservatives. A wholesome indulgence.">
+Implementing these updates will enhance the search engine optimization and visibility of Crumb Haven's website, attracting more customers seeking healthy and delicious cookies in Mumbai.
