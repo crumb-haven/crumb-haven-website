@@ -31,6 +31,14 @@ const files = [
       path.join(__dirname, 'dist', 'netlify.toml'),
       path.join(__dirname, 'dist', 'public', 'netlify.toml')
     ]
+  },
+  {
+    name: 'netlify.json',
+    source: path.join(__dirname, 'netlify.json'),
+    destinations: [
+      path.join(__dirname, 'dist', 'netlify.json'),
+      path.join(__dirname, 'dist', 'public', 'netlify.json')
+    ]
   }
 ];
 
