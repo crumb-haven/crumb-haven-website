@@ -3,14 +3,15 @@ import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import ProductCard from "@/components/ui/product-card";
-import { Button } from "@/components/ui/button";
 import { Product } from "@shared/schema";
 
 const Products = () => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
-  
+
   const { data: products, isLoading, error } = useQuery<Product[]>({
     queryKey: ['/api/products'],
+    retry: 3,
+    staleTime: 5 * 60 * 1000, // 5 minutes
   });
 
   const categories = [
@@ -46,45 +47,21 @@ const Products = () => {
 
   if (isLoading) {
     return (
-      <div className="container mx-auto px-4 py-16">
-        <div className="text-center mb-12 animate-pulse">
-          <div className="h-8 bg-slate-200 rounded w-1/4 mx-auto mb-4"></div>
-          <div className="h-4 bg-slate-200 rounded w-1/2 mx-auto"></div>
-        </div>
-        
-        <div className="flex justify-center mb-10 animate-pulse">
-          <div className="flex space-x-2">
-            {[...Array(4)].map((_, index) => (
-              <div key={index} className="h-10 bg-slate-200 rounded w-24"></div>
-            ))}
-          </div>
-        </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[...Array(8)].map((_, index) => (
-            <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md animate-pulse">
-              <div className="w-full h-60 bg-slate-200"></div>
-              <div className="p-4">
-                <div className="h-6 bg-slate-200 rounded w-3/4 mb-2"></div>
-                <div className="h-4 bg-slate-200 rounded w-full mb-3"></div>
-                <div className="h-4 bg-slate-200 rounded w-5/6 mb-3"></div>
-                <div className="flex justify-between items-center">
-                  <div className="h-6 bg-slate-200 rounded w-1/4"></div>
-                  <div className="h-8 bg-slate-200 rounded w-1/3"></div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+      <div className="container mx-auto px-4 py-8">
+        <div className="text-center">Loading products...</div>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="container mx-auto px-4 py-16 text-center">
-        <h2 className="text-2xl font-bold text-red-500">Error loading products</h2>
-        <p className="mt-4">Sorry, something went wrong. Please try again later.</p>
+      <div className="container mx-auto px-4 py-8">
+        <div className="text-center text-red-600">
+          Error loading products. Please try again later.
+          {process.env.NODE_ENV === 'development' && (
+            <div className="text-sm mt-2">{(error as Error).message}</div>
+          )}
+        </div>
       </div>
     );
   }
@@ -118,56 +95,36 @@ const Products = () => {
           })}
         </script>
       </Helmet>
-      
-      <div className="bg-[#F9F5EB] py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h1 className="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[#8B5A2B] mb-4">
-              Pure Desi Ghee Cookies in Mumbai – Healthy & Delicious Collection
-            </h1>
-            <p className="max-w-2xl mx-auto text-[#4A3520] opacity-80">
-              Discover our range of wholesome cookies, crafted with pure desi ghee, zero preservatives, and no trans fats. Each variety offers a perfect balance of authentic flavor and nourishing ingredients for guilt-free indulgence.
-            </p>
-          </div>
-          
-          <div className="flex justify-center mb-10">
-            <div className="flex flex-wrap gap-2 justify-center">
-              {categories.map(category => (
-                <Button
-                  key={category.id}
-                  variant={activeCategory === category.id ? "default" : "outline"}
-                  className={
-                    activeCategory === category.id
-                      ? "bg-[#8B5A2B] text-white hover:bg-[#6D4522]"
-                      : "border-[#8B5A2B] text-[#8B5A2B] hover:bg-[#8B5A2B] hover:text-white"
-                  }
-                  onClick={() => setActiveCategory(category.id)}
-                >
-                  {category.name}
-                </Button>
-              ))}
-            </div>
-          </div>
-          
-          {filteredProducts && filteredProducts.length > 0 ? (
-            <motion.div 
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
+
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex gap-4 mb-8 justify-center">
+          {categories.map((category) => (
+            <button
+              key={category.id || 'all'}
+              onClick={() => setActiveCategory(category.id)}
+              className={`px-4 py-2 rounded-full ${
+                activeCategory === category.id
+                  ? 'bg-primary text-white'
+                  : 'bg-gray-100 hover:bg-gray-200'
+              }`}
             >
-              {filteredProducts.map(product => (
-                <motion.div key={product.id} variants={itemVariants}>
-                  <ProductCard product={product} />
-                </motion.div>
-              ))}
-            </motion.div>
-          ) : (
-            <div className="text-center py-8">
-              <p className="text-[#4A3520]">No products found in this category. Please try another category.</p>
-            </div>
-          )}
+              {category.name}
+            </button>
+          ))}
         </div>
+
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {filteredProducts?.map((product) => (
+            <motion.div key={product.id} variants={itemVariants}>
+              <ProductCard product={product} />
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </>
   );
