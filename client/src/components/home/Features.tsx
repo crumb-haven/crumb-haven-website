@@ -55,20 +55,6 @@ const Features = () => {
             We believe indulgence should be as nourishing as it is delicious. Our cookies strike the perfect balance between taste and well-being.
           </p>
         </div>
-        
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="flex justify-center mb-16"
-        >
-          <img 
-            src="/images/crumb-haven-features.png" 
-            alt="Crumb Haven Features" 
-            className="max-w-full md:max-w-3xl mx-auto"
-          />
-        </motion.div>
 
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12"

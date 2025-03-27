@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import almondOatsLifestyleImage from "@assets/Almond Oats Lifestyle 2.jpg";
 
 const Lifestyle = () => {
   const usageIdeas = [
@@ -91,9 +92,9 @@ const Lifestyle = () => {
             variants={imageVariants}
           >
             <img 
-              src="/images/almonds.png" 
-              alt="Enjoying cookies with tea" 
-              className="rounded-lg shadow-lg w-full h-96 object-cover"
+              src={almondOatsLifestyleImage} 
+              alt="Almond Oat Cookies with ingredients" 
+              className="rounded-lg shadow-lg w-full h-auto object-cover"
               width="600" 
               height="400"
             />

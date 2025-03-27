@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import honeyOatsImage from "@assets/Honey Oats 2.png";
 
 const About = () => {
   const features = [
@@ -20,7 +21,7 @@ const About = () => {
 
   const featureVariants = {
     hidden: { opacity: 0 },
-    visible: transition => ({
+    visible: (transition: number) => ({
       opacity: 1,
       transition: { delay: 0.4 + transition * 0.1 }
     })
@@ -37,9 +38,9 @@ const About = () => {
             variants={imageVariants}
           >
             <img 
-              src="https://images.unsplash.com/photo-1556912173-3bb406ef7e97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
-              alt="Baking cookies with natural ingredients" 
-              className="rounded-lg shadow-lg w-full h-96 object-cover"
+              src={honeyOatsImage} 
+              alt="Honey Oat Cookies with ingredients" 
+              className="rounded-lg shadow-lg w-full h-auto object-cover"
               width="600" 
               height="400"
             />
