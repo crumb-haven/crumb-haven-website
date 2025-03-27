@@ -1,17 +1,31 @@
 import { Link } from "wouter";
 import { Product } from "@shared/schema";
+import { useMemo } from "react";
 // Import the necessary attached assets
 import almondOatImage from "@assets/Almond Oat Lifestyle.png";
 import chocochipBrownieImage from "@assets/Chocochip Brownie.png";
 import kodoMilletImage from "@assets/Kodo Millet.png";
 import honeyOatsImage from "@assets/Honey Oats.png";
 
+// Preload critical images
+const preloadImages = () => {
+  const images = [almondOatImage, chocochipBrownieImage, kodoMilletImage, honeyOatsImage];
+  images.forEach((image) => {
+    const img = new Image();
+    img.src = image;
+  });
+};
+
+// Call preload once
+preloadImages();
+
 interface ProductCardProps {
   product: Product;
 }
 
 const ProductCard = ({ product }: ProductCardProps) => {
-  const productTags = (product: Product) => {
+  // Memoize product tags to prevent recalculation on re-renders
+  const productTags = useMemo(() => {
     const tags = [];
     
     if (product.name.includes("Almond")) {
@@ -33,10 +47,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
     }
     
     return tags;
-  };
+  }, [product.name]);
 
-  // Helper function to get the correct image based on product name
-  const getProductImage = (product: Product) => {
+  // Memoize product image to prevent recalculation on re-renders
+  const productImage = useMemo(() => {
     if (product.name.includes("Almond")) {
       return almondOatImage;
     } else if (product.name.includes("Chocochip")) {
@@ -48,17 +62,19 @@ const ProductCard = ({ product }: ProductCardProps) => {
     }
     // Fallback to first image if no match
     return almondOatImage;
-  };
+  }, [product.name]);
 
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow hover:scale-[1.02] duration-300">
       <Link href={`/product/${product.slug}`}>
         <img 
-          src={getProductImage(product)} 
+          src={productImage} 
           alt={product.name} 
           className="w-full h-60 object-cover" 
           width="500" 
           height="300"
+          loading="lazy"
+          decoding="async"
         />
       </Link>
       <div className="p-4">
@@ -83,7 +99,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           {product.shortDescription}
         </p>
         <div className="mt-3 flex flex-wrap gap-2">
-          {productTags(product).map((tag, index) => (
+          {productTags.map((tag, index) => (
             <span key={index} className="bg-[#F9F5EB] text-xs px-2 py-1 rounded-full text-[#6D4522]">
               {tag}
             </span>
