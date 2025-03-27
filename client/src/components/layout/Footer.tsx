@@ -7,7 +7,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About */}
           <div>
-            <h3 className="font-['Playfair_Display'] text-xl font-semibold mb-4">Crumb Haven</h3>
+            <div className="mb-4">
+              <img src="/images/logo.png" alt="Crumb Haven" className="h-20 mb-2" />
+            </div>
             <p className="opacity-80 mb-4">
               Indulgence never tasted so healthy. Our cookies are crafted with pure desi ghee, zero preservatives, and no trans fats.
             </p>

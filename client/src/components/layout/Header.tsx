@@ -31,7 +31,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link href="/">
-            <img src="/assets/brand-logo.png" alt="Crumb Haven" className="h-16" />
+            <img src="/images/logo.png" alt="Crumb Haven" className="h-16" />
           </Link>
           <nav className="hidden md:flex space-x-8">
             <Link href="/" className="text-[#4A3520] hover:text-[#8B5A2B]">Home</Link>

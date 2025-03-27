@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import featuresImage from "@assets/CRUMB HAVEN FEATURES.png";
 
 const Features = () => {
   const features = [
@@ -65,7 +64,7 @@ const Features = () => {
           className="flex justify-center mb-16"
         >
           <img 
-            src={featuresImage} 
+            src="/images/crumb-haven-features.png" 
             alt="Crumb Haven Features" 
             className="max-w-full md:max-w-3xl mx-auto"
           />

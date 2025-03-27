@@ -5,22 +5,22 @@ const Ingredients = () => {
     {
       name: "Pure Desi Ghee",
       description: "We use only authentic desi ghee, never palm oil, for rich flavor and wholesome goodness.",
-      image: "https://images.unsplash.com/photo-1600184461441-5d128306cf7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+      image: "/images/ghee.png"
     },
     {
       name: "Premium Almonds",
       description: "Our cookies contain high-quality almonds, adding protein, healthy fats, and delicious crunch.",
-      image: "https://images.unsplash.com/photo-1621855673823-d53b773773d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+      image: "/images/almonds.png"
     },
     {
       name: "Whole Grain Oats",
       description: "Nutrient-rich oats provide fiber and complex carbohydrates for sustained energy.",
-      image: "https://images.unsplash.com/photo-1614961233913-a5113a4a34ed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+      image: "/images/honey-oats.png"
     },
     {
       name: "Kodo Millet",
       description: "This ancient grain is gluten-free and packed with protein, fiber, and essential nutrients.",
-      image: "https://images.unsplash.com/photo-1596360819641-84d2af6fa1cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+      image: "/images/kodo-millet.png"
     }
   ];
 
