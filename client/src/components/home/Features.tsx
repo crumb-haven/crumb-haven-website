@@ -4,8 +4,8 @@ import featuresImage from "@assets/CRUMB HAVEN FEATURES.png";
 const Features = () => {
   const features = [
     {
-      title: "100% Pure Maple Syrup",
-      description: "We use real maple syrup for natural sweetness in many of our cookies.",
+      title: "100% Natural",
+      description: "We use only natural ingredients with no artificial additives.",
       color: "bg-[#8B5A2B]"
     },
     {
@@ -14,12 +14,12 @@ const Features = () => {
       color: "bg-[#8B5A2B]"
     },
     {
-      title: "No Added Preservatives",
+      title: "No Preservatives",
       description: "Our cookies are free from artificial preservatives for a truly natural treat.",
       color: "bg-[#8B5A2B]"
     },
     {
-      title: "Trans Fats Free",
+      title: "Trans Fat Free",
       description: "Zero trans fats in all our products for a healthier indulgence experience.",
       color: "bg-[#8B5A2B]"
     }
