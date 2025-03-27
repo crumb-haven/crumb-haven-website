@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Priya R.",
+    "location": "Delhi",
+    "text": "These cookies are a game-changer! As someone who's always looking for healthier snack options, I was thrilled to discover Crumb Haven's Almond Oat Cookies. They're deliciously satisfying without the guilt. My kids love them too!",
+    "rating": 5,
+    "date": "2023-10-15"
+  },
+  {
+    "id": 2,
+    "name": "Rahul M.",
+    "location": "Mumbai",
+    "text": "I've tried many 'healthy' cookies before, but they always taste like cardboard. Crumb Haven's cookies actually taste amazing while still being made with quality ingredients. The Chocochip Brownie is my absolute favorite!",
+    "rating": 5,
+    "date": "2023-11-02"
+  },
+  {
+    "id": 3,
+    "name": "Aisha K.",
+    "location": "Bangalore",
+    "text": "As someone with gluten sensitivity, finding delicious treats can be challenging. The Kodo Millet Cookies are perfect - they taste great and don't cause any digestive issues. So happy to have found these!",
+    "rating": 5,
+    "date": "2023-09-28"
+  },
+  {
+    "id": 4,
+    "name": "Vikram S.",
+    "location": "Hyderabad",
+    "text": "I ordered these for my health-conscious wife, but ended up eating most of them myself! The taste is authentic and they're clearly made with quality ingredients. Love that they use desi ghee instead of processed oils.",
+    "rating": 4,
+    "date": "2023-10-10"
+  }
+]

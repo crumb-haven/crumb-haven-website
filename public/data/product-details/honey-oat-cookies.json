@@ -1,0 +1,24 @@
+{
+  "product": {
+    "id": 4,
+    "name": "Honey Oat Cookies",
+    "slug": "honey-oat-cookies",
+    "description": "Infused with the natural sweetness of honey and the nutritional power of oats, our Honey Oat Cookies deliver the perfect harmony of taste and health. Made with pure Desi ghee, zero trans fats, and no preservatives, these cookies are a wholesome snack that supports your well-being while satisfying your sweet cravings.",
+    "shortDescription": "Infused with natural sweetness of honey and the nutritional power of oats.",
+    "price": "229",
+    "salePrice": "229",
+    "imageSrc": "/honey-oats",
+    "badge": null,
+    "isFeatured": null,
+    "category": "healthy"
+  },
+  "features": [
+    "Naturally sweetened with pure honey",
+    "Rich in dietary fiber from whole oats",
+    "Made with pure desi ghee - no harmful oils",
+    "Zero trans fats and no artificial preservatives",
+    "Perfectly balanced sweetness - not overpowering",
+    "Wholesome ingredients for sustained energy",
+    "Great for breakfast, post-workout, or anytime snacking"
+  ]
+}

@@ -4,6 +4,8 @@ import { storage } from "./storage";
 import { z } from "zod";
 import { insertContactSubmissionSchema, insertNewsletterSubscriptionSchema } from "@shared/schema";
 import { fromZodError } from "zod-validation-error";
+import fs from 'fs';
+import path from 'path';
 
 // Simple in-memory cache implementation
 interface CacheItem<T> {
@@ -61,6 +63,17 @@ class AppCache {
 // Initialize cache instance
 const appCache = new AppCache();
 
+// Utility function to read static JSON files as fallback
+async function readJsonFile(filePath: string): Promise<any> {
+  try {
+    const fileData = await fs.promises.readFile(filePath, 'utf-8');
+    return JSON.parse(fileData);
+  } catch (error) {
+    console.error(`Error reading JSON file at ${filePath}:`, error);
+    throw error;
+  }
+}
+
 // Performance monitoring middleware
 const performanceMonitor = (req: Request, res: Response, next: NextFunction) => {
   const start = Date.now();
@@ -105,8 +118,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
       addStandardHeaders(res);
       return res.json(products);
     } catch (error) {
-      console.error("Error fetching products:", error);
-      return res.status(500).json({ message: "Failed to fetch products" });
+      console.error("Error fetching products from storage:", error);
+      
+      // Attempt to read from static JSON file as fallback
+      try {
+        const staticProducts = await readJsonFile(path.join(process.cwd(), 'public/data/products.json'));
+        addStandardHeaders(res);
+        console.log("Serving products from static JSON fallback");
+        return res.json(staticProducts);
+      } catch (fallbackError) {
+        console.error("Static fallback failed:", fallbackError);
+        return res.status(500).json({ message: "Failed to fetch products" });
+      }
     }
   });
   
@@ -137,13 +160,24 @@ export async function registerRoutes(app: Express): Promise<Server> {
       addStandardHeaders(res);
       return res.json(productData);
     } catch (error) {
-      console.error("Error fetching product:", error);
+      console.error("Error fetching product from storage:", error);
       
-      if ((error as Error).message === 'Product not found') {
-        return res.status(404).json({ message: "Product not found" });
+      // Attempt to read from static JSON file as fallback
+      try {
+        const { slug } = req.params;
+        const staticProductData = await readJsonFile(path.join(process.cwd(), `public/data/product-details/${slug}.json`));
+        addStandardHeaders(res);
+        console.log(`Serving product ${slug} from static JSON fallback`);
+        return res.json(staticProductData);
+      } catch (fallbackError) {
+        console.error("Static fallback failed:", fallbackError);
+        
+        if ((error as Error).message === 'Product not found') {
+          return res.status(404).json({ message: "Product not found" });
+        }
+        
+        return res.status(500).json({ message: "Failed to fetch product" });
       }
-      
-      return res.status(500).json({ message: "Failed to fetch product" });
     }
   });
   
@@ -158,8 +192,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
       addStandardHeaders(res);
       return res.json(products);
     } catch (error) {
-      console.error("Error fetching featured products:", error);
-      return res.status(500).json({ message: "Failed to fetch featured products" });
+      console.error("Error fetching featured products from storage:", error);
+      
+      // Attempt to read from static JSON file as fallback
+      try {
+        const staticFeaturedProducts = await readJsonFile(path.join(process.cwd(), 'public/data/featured-products.json'));
+        addStandardHeaders(res);
+        console.log("Serving featured products from static JSON fallback");
+        return res.json(staticFeaturedProducts);
+      } catch (fallbackError) {
+        console.error("Static fallback failed:", fallbackError);
+        return res.status(500).json({ message: "Failed to fetch featured products" });
+      }
     }
   });
   
@@ -174,8 +218,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
       addStandardHeaders(res);
       return res.json(testimonials);
     } catch (error) {
-      console.error("Error fetching testimonials:", error);
-      return res.status(500).json({ message: "Failed to fetch testimonials" });
+      console.error("Error fetching testimonials from storage:", error);
+      
+      // Attempt to read from static JSON file as fallback
+      try {
+        const staticTestimonials = await readJsonFile(path.join(process.cwd(), 'public/data/testimonials.json'));
+        addStandardHeaders(res);
+        console.log("Serving testimonials from static JSON fallback");
+        return res.json(staticTestimonials);
+      } catch (fallbackError) {
+        console.error("Static fallback failed:", fallbackError);
+        return res.status(500).json({ message: "Failed to fetch testimonials" });
+      }
     }
   });
   
@@ -205,6 +259,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
     } catch (error) {
       console.error("Error submitting contact form:", error);
+      // For form submissions, we don't provide a fallback as it's write operation
       return res.status(400).json({ 
         success: false,
         message: "Failed to submit contact form. Please try again." 
@@ -232,6 +287,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
     } catch (error) {
       console.error("Error subscribing to newsletter:", error);
+      // For newsletter subscriptions, we don't provide a fallback as it's write operation
       return res.status(400).json({ 
         success: false,
         message: "Failed to subscribe to newsletter. Please try again." 

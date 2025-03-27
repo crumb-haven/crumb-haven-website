@@ -1,0 +1,24 @@
+{
+  "product": {
+    "id": 3,
+    "name": "Kodo Millet Cookies",
+    "slug": "kodo-millet-cookies",
+    "description": "Power-packed with protein, fiber, and ancient grain goodness, our Kodo Millet Cookies are completely wheat-free, making them the perfect choice for gluten-sensitive or health-conscious consumers. Crafted with pure Desi ghee, zero refined sugar, and no preservatives, these cookies offer a light yet satisfying crunch while promoting better digestion and sustained energy.",
+    "shortDescription": "Power-packed with protein, fiber, and ancient grain goodness, completely wheat-free.",
+    "price": "279",
+    "salePrice": "279",
+    "imageSrc": "/kodo-millet",
+    "badge": "Gluten-Free",
+    "isFeatured": null,
+    "category": "gluten-free"
+  },
+  "features": [
+    "100% wheat-free and gluten-free recipe",
+    "Ancient grain kodo millet for better digestion",
+    "High protein and fiber content",
+    "Made with pure desi ghee - no harmful oils",
+    "Zero preservatives and no artificial additives",
+    "Low glycemic index for stable energy levels",
+    "Great for those with wheat sensitivity or gluten intolerance"
+  ]
+}

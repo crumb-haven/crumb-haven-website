@@ -1,0 +1,24 @@
+{
+  "product": {
+    "id": 2,
+    "name": "Chocochip Brownie Cookies",
+    "slug": "chocochip-brownie-cookies",
+    "description": "For those who crave intense chocolate flavour with a crunch, our Choco Chip Brownie Cookies are the perfect treat. Combining the fudgy richness of brownies with crispy choco chips, these cookies redefine indulgence without compromising on health. Made with pure Desi ghee (never palm oil), zero trans fats, and no preservatives, each bite is a decadent yet guilt-free delight.",
+    "shortDescription": "Combining the fudgy richness of brownies with crispy choco chips for chocolate lovers.",
+    "price": "249",
+    "salePrice": "249",
+    "imageSrc": "/chocochip-brownie",
+    "badge": "New",
+    "isFeatured": true,
+    "category": "indulgent"
+  },
+  "features": [
+    "Rich chocolate flavor from premium cacao powder",
+    "Made with pure desi ghee - no palm oil",
+    "Zero trans fats and no artificial preservatives",
+    "Premium chocolate chips in every bite",
+    "Brownie-like texture with cookie crunch",
+    "No artificial flavors or colors",
+    "Carefully balanced sweetness for guilt-free indulgence"
+  ]
+}

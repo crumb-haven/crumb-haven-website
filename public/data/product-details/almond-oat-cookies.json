@@ -1,0 +1,24 @@
+{
+  "product": {
+    "id": 1,
+    "name": "Almond Oat Cookies",
+    "slug": "almond-oat-cookies",
+    "description": "A wholesome blend of nutrient-rich oats, premium almonds, and whole wheat flour, our Almond Oat Cookies offer the perfect balance of taste and health. Made exclusively with pure Desi ghee—never palm oil—these cookies bring home a rich, authentic flavour while staying free from trans fats and preservatives. Whether you're looking for a guilt-free snack or a nourishing treat, this clean-label delight ensures pure indulgence with every bite.",
+    "shortDescription": "A wholesome blend of nutrient-rich oats, premium almonds, and whole wheat flour.",
+    "price": "199",
+    "salePrice": "199",
+    "imageSrc": "/almond-oat-lifestyle",
+    "badge": "Bestseller",
+    "isFeatured": true,
+    "category": "healthy"
+  },
+  "features": [
+    "Made with pure desi ghee - no palm oil or hydrogenated fats",
+    "Zero trans fats and no preservatives or artificial additives",
+    "Rich in fiber from whole oats for digestive health",
+    "Contains protein-rich almonds with essential nutrients",
+    "Natural sweetness with reduced refined sugar content",
+    "No artificial flavors or colors - only natural ingredients",
+    "Whole grain goodness for sustained energy release"
+  ]
+}
