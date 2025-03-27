@@ -82,7 +82,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
       
-      const submission = await storage.createContactSubmission(validationResult.data);
+      await storage.createContactSubmission(validationResult.data);
       return res.status(201).json({ 
         success: true,
         message: "Contact form submitted successfully" 
@@ -105,7 +105,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       const { email } = emailSchema.parse(req.body);
       
-      const subscription = await storage.createNewsletterSubscription({
+      await storage.createNewsletterSubscription({
         email,
         createdAt: new Date().toISOString()
       });
