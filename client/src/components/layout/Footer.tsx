@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import logoImage from "@assets/LOGO JPG transparent bck resized.png";
 
 const Footer = () => {
   return (
@@ -8,7 +9,7 @@ const Footer = () => {
           {/* About */}
           <div>
             <div className="mb-4">
-              <img src="/images/logo.png" alt="Crumb Haven" className="h-20 mb-2" />
+              <img src={logoImage} alt="Crumb Haven" className="h-20 mb-2" />
             </div>
             <p className="opacity-80 mb-4">
               Indulgence never tasted so healthy. Our cookies are crafted with pure desi ghee, zero preservatives, and no trans fats.
