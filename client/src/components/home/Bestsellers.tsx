@@ -7,7 +7,12 @@ import { Product } from "@shared/schema";
 
 const Bestsellers = () => {
   const { data: products, isLoading, error } = useQuery<Product[]>({
-    queryKey: ['/api/products'],
+    queryKey: ['products'],
+    queryFn: async () => {
+      const response = await fetch('/api/products');
+      if (!response.ok) throw new Error('Network response was not ok');
+      return response.json();
+    }
   });
 
   if (isLoading) {

@@ -4,7 +4,12 @@ import { Testimonial } from "@shared/schema";
 
 const Testimonials = () => {
   const { data: testimonials, isLoading, error } = useQuery<Testimonial[]>({
-    queryKey: ['/api/testimonials'],
+    queryKey: ['testimonials'],
+    queryFn: async () => {
+      const response = await fetch('/api/testimonials');
+      if (!response.ok) throw new Error('Network response was not ok');
+      return response.json();
+    }
   });
 
   if (isLoading) {
