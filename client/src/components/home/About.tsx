@@ -61,6 +61,9 @@ const About = () => {
             <p className="text-[#4A3520] opacity-90 mb-4 leading-relaxed">
               We replace processed additives with nature's best, striking the perfect balance between taste and well-being. Every cookie is a testament to our commitment—where tradition meets health, and flavour never takes a backseat.
             </p>
+            <p className="text-[#4A3520] opacity-90 mb-4 leading-relaxed">
+              We replace processed additives with nature's best, striking the perfect balance between taste and well-being. Every cookie is a testament to our commitment—where tradition meets health, and flavour never takes a backseat.
+            </p>
             <div className="mt-6 grid grid-cols-2 gap-4">
               {features.map((feature, index) => (
                 <motion.div
