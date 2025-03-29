@@ -16,24 +16,14 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
           >
             <h1 className="font-['Playfair_Display'] text-4xl md:text-5xl lg:text-6xl font-bold text-[#8B5A2B] leading-tight">
-              Indulgence <span className="text-[#D9B03D] italic">Never</span> Tasted So Healthy
+              Our Story
             </h1>
             <p className="mt-4 text-lg md:text-xl text-[#4A3520] opacity-90">
-              Cookies crafted with pure desi ghee, zero preservatives, and no trans fats – where tradition meets wellness.
+              At Crumb Haven, we believe indulgence should be as nourishing as it is delicious. Our cookies are crafted with Pure Desi Ghee, Zero Preservatives, and No Trans Fats, ensuring every bite delivers authentic flavour with clean, wholesome ingredients.
             </p>
-            <div className="mt-8 space-y-4">
-              <div className="flex items-start space-x-3">
-                <Check className="text-[#7D9D74] mt-1" />
-                <p className="font-medium">Pure Desi Ghee Goodness – No Palm Oil</p>
-              </div>
-              <div className="flex items-start space-x-3">
-                <Check className="text-[#7D9D74] mt-1" />
-                <p className="font-medium">Zero Trans Fat & No Preservatives</p>
-              </div>
-              <div className="flex items-start space-x-3">
-                <Check className="text-[#7D9D74] mt-1" />
-                <p className="font-medium">Wholesome Ingredients – Almonds, oats, honey, Kodo millet</p>
-              </div>
+            <p className="mt-4 text-lg md:text-xl text-[#4A3520] opacity-90">
+              We replace processed additives with nature's best, striking the perfect balance between taste and well-being. Every cookie is a testament to our commitment—where tradition meets health, and flavour never takes a backseat.
+            </p>
             </div>
             <div className="mt-8 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Link href="/products">
