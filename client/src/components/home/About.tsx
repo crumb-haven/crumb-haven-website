@@ -53,7 +53,7 @@ const About = () => {
           >
             <p className="font-['Caveat'] text-xl text-[#7D9D74] mb-2">Our Story</p>
             <h2 className="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[#8B5A2B] mb-4">
-              About Crumb Haven – Where Tradition Meets Wellness in Every Cookie
+              Our Story
             </h2>
             <p className="text-[#4A3520] opacity-90 mb-4 leading-relaxed">
               At Crumb Haven, we believe indulgence should be as nourishing as it is delicious. Our cookies are crafted with Pure Desi Ghee, Zero Preservatives, and No Trans Fats, ensuring every bite delivers authentic flavour with clean, wholesome ingredients.
