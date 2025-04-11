@@ -9,7 +9,14 @@ const Products = () => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   const { data: products, isLoading, error } = useQuery<Product[]>({
-    queryKey: ['/api/products'],
+    queryKey: ['products'],
+    queryFn: async () => {
+      const response = await fetch('/data/products.json');
+      if (!response.ok) {
+        throw new Error('Failed to fetch products');
+      }
+      return response.json();
+    },
     retry: 3,
     staleTime: 5 * 60 * 1000, // 5 minutes
   });
