@@ -1,0 +1,38 @@
+You are a skilled web developer. Your task is to clean and optimize the existing HTML/CSS/JS code of the website www.crumbhaven.in. Do not redesign the website or change its existing photos, layout, or colors. Only correct the following:
+
+1. ✅ **Remove Content Duplication:**
+   - The homepage has multiple repeated blocks of content. Identify and remove any *redundant sections*, especially those that repeat the intro paragraph, CTAs, or banner content.
+   - Ensure no section appears more than once unless it’s meant to be reused (like navbars or footers).
+
+2. ✅ **Fix Missing Sections:**
+   - The **Testimonials** section is not visible on the live site. Ensure it is included and properly styled. Add `id="testimonials"` to help navigation and enable anchor links.
+   - The **Products** or **Our Cookies** section (which should showcase different Crumb Haven cookies) is missing or hidden. Ensure it is visible, styled, and responsive.
+   - Check for `display: none`, broken anchor tags, or missing imports that could be hiding these.
+
+3. ✅ **Navigation Links:**
+   - Ensure navigation links (e.g., Home, About, Testimonials, Products) correctly scroll to or jump to the appropriate section using anchor tags (like `#testimonials`, `#products`).
+   - Fix any broken nav links or misaligned sections.
+
+4. ✅ **Clean Up HTML:**
+   - Remove any unused `<div>` blocks, commented-out duplicate code, or placeholder content.
+   - Use semantic tags where possible (e.g., `<section>`, `<article>`, `<footer>`) to improve code clarity and SEO.
+
+5. ✅ **Ensure Responsive Design:**
+   - Without changing the overall layout, verify that all sections (especially the Testimonials and Product cards) are **visible and functional on mobile**, tablet, and desktop views.
+   - Fix any overlapping text or images caused by missing media queries or fixed widths.
+
+6. ✅ **Performance & SEO Basics:**
+   - Minify repeated inline styles or large blocks of JS if possible.
+   - Ensure all `<img>` tags have `alt` attributes and optimize lazy loading where applicable.
+   - Clean up unused CSS classes or libraries (e.g., if Bootstrap or Animate.css is included but not used).
+
+⚠️ **Do not change:**
+- Fonts
+- Brand colors
+- Images and videos
+- Logo and favicon
+- Page order
+
+📦 You may assume all assets (images, JS, CSS) are already present in the Replit `public` or `assets` folder.
+
+💡 Deliver clean and production-ready HTML/CSS/JS code that matches the current design but fixes the technical issues and duplication mentioned above.

@@ -1,0 +1,49 @@
+You're a senior front-end developer. I need you to clean up and update the codebase of the website www.crumbhaven.in, keeping the **design, photos, fonts, and overall layout exactly the same**. Follow the exact instructions below:
+
+---
+
+✅ 1. REMOVE DUPLICATES:
+- Remove repeated "Explore Our Treats" or any duplicate product showcase sections.
+- Eliminate unnecessary or repeated text blocks, banners, or CTAs.
+
+✅ 2. FIX MISSING TESTIMONIALS:
+- Add a **Testimonials** section with this structure:
+  <section id="testimonials">
+    <h2>What Our Fans Say</h2>
+    <div class="testimonial">“Finally, cookies that taste sinful but feel guilt-free!” – Radhika S.</div>
+    <div class="testimonial">“The Kodo Millet cookie is a revolution!” – Arjun M.</div>
+  </section>
+- Style the testimonials in a clean grid or slider layout. Match Crumb Haven’s soft brand theme (beige, brown, pink).
+
+✅ 3. ENSURE PRODUCTS SECTION IS VISIBLE:
+- If the product section is hidden or not loading, fix display issues.
+- Ensure this section shows: Product images + name + short description + "Order Now" CTA.
+
+✅ 4. FIX NAVIGATION ANCHORS:
+- Ensure top navigation links correctly scroll to:
+  - Home (`#home`)
+  - About Us (`#about`)
+  - Products (`#products`)
+  - Testimonials (`#testimonials`)
+  - Contact (`#contact`)
+- Use smooth scroll behavior.
+
+✅ 5. RESPONSIVE DESIGN:
+- Make sure all sections (especially Testimonials and Products) render correctly on mobile and tablet.
+- Fix any overlapping, overflow, or scaling issues using CSS media queries.
+
+✅ 6. CLEAN CODE:
+- Remove unused `<div>`, `<style>`, or `<script>` blocks.
+- Remove any commented-out HTML or leftover placeholders.
+- Add `alt` attributes to all `<img>` tags.
+- Keep the file structure clean and organized (HTML in `index.html`, styles in `style.css`, and scripts in `script.js`).
+
+---
+
+⛔ Do NOT:
+- Change the site’s visual theme
+- Replace images or brand colors
+- Modify text outside the duplicated sections
+
+🎯 Final Output:
+A cleaned-up, fully functional Crumb Haven site with no duplication, visible testimonials, working product showcase, and perfect mobile responsiveness.
