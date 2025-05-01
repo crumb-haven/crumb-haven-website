@@ -1,8 +1,6 @@
-
 import { motion } from "framer-motion";
-import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "../ui/button";
 import almondOatImage from "@assets/Almond Oat Lifestyle.png";
 
 const Hero = () => {
@@ -17,10 +15,10 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
           >
             <h1 className="font-['Playfair_Display'] text-4xl md:text-5xl lg:text-6xl font-bold text-[#8B5A2B] leading-tight">
-              Our Story
+              Delicious & Natural Cookies
             </h1>
             <p className="mt-4 text-lg md:text-xl text-[#4A3520] opacity-90">
-              At Crumb Haven, we believe indulgence should be as nourishing as it is delicious. Our cookies are crafted with Pure Desi Ghee, Zero Preservatives, and No Trans Fats, ensuring every bite delivers authentic flavour with clean, wholesome ingredients.
+              Handcrafted with pure desi ghee and wholesome ingredients for a truly authentic taste.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Link href="/products">
