@@ -22,9 +22,6 @@ const Hero = () => {
             <p className="mt-4 text-lg md:text-xl text-[#4A3520] opacity-90">
               At Crumb Haven, we believe indulgence should be as nourishing as it is delicious. Our cookies are crafted with Pure Desi Ghee, Zero Preservatives, and No Trans Fats, ensuring every bite delivers authentic flavour with clean, wholesome ingredients.
             </p>
-            <p className="mt-4 text-lg md:text-xl text-[#4A3520] opacity-90">
-              We replace processed additives with nature's best, striking the perfect balance between taste and well-being. Every cookie is a testament to our commitment—where tradition meets health, and flavour never takes a backseat.
-            </p>
             <div className="mt-8 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Link href="/products">
                 <Button className="w-full sm:w-auto bg-[#8B5A2B] hover:bg-[#6D4522] text-white">
