@@ -6,7 +6,7 @@ const Testimonials = () => {
   const { data: testimonials, isLoading, error } = useQuery<Testimonial[]>({
     queryKey: ['testimonials'],
     queryFn: async () => {
-      const response = await fetch('/api/testimonials');
+      const response = await fetch('/data/testimonials.json');
       if (!response.ok) throw new Error('Network response was not ok');
       return response.json();
     }

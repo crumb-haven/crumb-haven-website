@@ -2,50 +2,32 @@
 import { motion } from "framer-motion";
 import honeyOatsImage from "@assets/Honey Oats 2.png";
 
-const About = () => {
-  const features = [
-    { icon: "fas fa-certificate", text: "Quality Ingredients" },
-    { icon: "fas fa-heart", text: "Made with Love" },
-    { icon: "fas fa-leaf", text: "Always Natural" },
-    { icon: "fas fa-home", text: "Tastes Like Home" }
-  ];
+const features = [
+  { icon: "fas fa-star", text: "Quality Ingredients" },
+  { icon: "fas fa-heart", text: "Made with Love" },
+  { icon: "fas fa-leaf", text: "Always Natural" },
+  { icon: "fas fa-home", text: "Tastes Like Home" }
+];
 
+const About = () => {
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
   };
 
-  const imageVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } }
-  };
-
   const featureVariants = {
-    hidden: { opacity: 0 },
-    visible: (transition: number) => ({
+    hidden: { opacity: 0, x: -20 },
+    visible: (i: number) => ({
       opacity: 1,
-      transition: { delay: 0.4 + transition * 0.1 }
+      x: 0,
+      transition: { delay: 0.2 * i, duration: 0.5 }
     })
   };
 
   return (
     <section id="about" className="bg-white py-16">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={imageVariants}
-          >
-            <img 
-              src={honeyOatsImage} 
-              alt="Crumb Haven Honey Oat Cookies made with whole grains, natural honey, and pure desi ghee" 
-              className="rounded-lg shadow-lg w-full h-auto object-cover"
-              width="600" 
-              height="400"
-            />
-          </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -74,6 +56,19 @@ const About = () => {
                 </motion.div>
               ))}
             </div>
+          </motion.div>
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <img
+              src={honeyOatsImage}
+              alt="Honey Oats Cookie"
+              className="rounded-lg shadow-xl w-full"
+            />
           </motion.div>
         </div>
       </div>
