@@ -9,8 +9,10 @@ import { useCartStore } from "@/lib/cart-store";
 const FeaturedProduct = () => {
   const { data: products, isLoading, error } = useQuery<Product[]>({
     queryKey: ['featured-products'],
-    queryFn: () => {
-      return import('/public/data/featured-products.json').then(module => module.default);
+    queryFn: async () => {
+      const response = await fetch('/data/featured-products.json');
+      if (!response.ok) throw new Error('Network response was not ok');
+      return response.json();
     }
   });
   
