@@ -8,7 +8,10 @@ import { useCartStore } from "@/lib/cart-store";
 
 const FeaturedProduct = () => {
   const { data: products, isLoading, error } = useQuery<Product[]>({
-    queryKey: ['/data/featured-products.json'],
+    queryKey: ['featured-products'],
+    queryFn: () => {
+      return import('/public/data/featured-products.json').then(module => module.default);
+    }
   });
   
   const addToCart = useCartStore(state => state.addItem);

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link } from "wouter";
 import { Button } from "../ui/button";
 import almondOatImage from "@assets/Almond Oat Lifestyle.png";
 
