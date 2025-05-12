@@ -9,7 +9,7 @@ import Products from "@/pages/products";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-function Router() {
+function AppRoutes() {
   return (
     <Switch>
       <Route path="/" component={Home} />
@@ -27,7 +27,7 @@ function App() {
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow">
-            <Router />
+            <AppRoutes />
           </main>
           <Footer />
         </div>
