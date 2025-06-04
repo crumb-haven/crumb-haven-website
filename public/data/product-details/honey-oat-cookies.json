@@ -9,7 +9,7 @@
     "salePrice": "229",
     "imageSrc": "/honey-oats",
     "badge": null,
-    "isFeatured": null,
+    "isFeatured": false,
     "category": "healthy"
   },
   "features": [
