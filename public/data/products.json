@@ -35,7 +35,7 @@
     "salePrice": "279",
     "imageSrc": "/kodo-millet",
     "badge": "Gluten-Free",
-    "isFeatured": null,
+    "isFeatured": false,
     "category": "gluten-free"
   },
   {
@@ -48,7 +48,7 @@
     "salePrice": "229",
     "imageSrc": "/honey-oats",
     "badge": null,
-    "isFeatured": null,
+    "isFeatured": false,
     "category": "healthy"
   }
 ]
