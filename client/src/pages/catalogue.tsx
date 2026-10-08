@@ -5,7 +5,6 @@ const Catalogue = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Detect if device is mobile based on screen size and user agent
     const checkMobile = () => {
       const isMobileScreen = window.innerWidth < 1024;
       const isMobileUserAgent = /Mobile|Android|iPhone|iPad|iPod/i.test(
@@ -31,23 +30,20 @@ const Catalogue = () => {
         <link rel="canonical" href="https://crumbhaven.in/catalogue" />
       </Helmet>
 
-      <div className="w-full h-screen bg-white overflow-hidden">
+      <div className="w-screen h-screen overflow-hidden bg-white">
         {isMobile ? (
-          // Mobile: Show "Open Catalogue" button
-          <div className="flex items-center justify-center w-full h-full">
+          <div className="flex h-full w-full items-center justify-center">
             <a
               href="/catalogue.pdf"
-              download
-              className="inline-flex items-center justify-center px-8 py-4 bg-amber-900 text-white font-semibold rounded-lg hover:bg-amber-950 transition-colors duration-200 shadow-lg"
+              className="inline-flex items-center justify-center rounded-lg bg-amber-900 px-8 py-4 font-semibold text-white shadow-lg transition-colors duration-200 hover:bg-amber-950"
             >
               Open Catalogue
             </a>
           </div>
         ) : (
-          // Desktop: Embed PDF directly
           <iframe
             src="/catalogue.pdf"
-            className="w-full h-full border-none"
+            className="block h-full w-full border-0"
             title="Crumb Haven Catalogue"
           />
         )}
