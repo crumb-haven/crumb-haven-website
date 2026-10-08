@@ -16,7 +16,6 @@ function AppRoutes() {
       <Route path="/" component={Home} />
       <Route path="/products" component={Products} />
       <Route path="/product/:slug" component={Product} />
-      <Route path="/catalogue" component={Catalogue} />
       <Route component={NotFound} />
     </Switch>
   );
@@ -26,13 +25,19 @@ function App() {
   return (
     <Router>
       <QueryClientProvider client={queryClient}>
-        <div className="flex flex-col min-h-screen">
-          <Header />
-          <main className="flex-grow">
-            <AppRoutes />
-          </main>
-          <Footer />
-        </div>
+        <Switch>
+          {/* The catalogue shows only the PDF, without the site header and footer */}
+          <Route path="/catalogue" component={Catalogue} />
+          <Route>
+            <div className="flex flex-col min-h-screen">
+              <Header />
+              <main className="flex-grow">
+                <AppRoutes />
+              </main>
+              <Footer />
+            </div>
+          </Route>
+        </Switch>
         <Toaster />
       </QueryClientProvider>
     </Router>
