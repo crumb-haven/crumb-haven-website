@@ -6,6 +6,7 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import Product from "@/pages/product";
 import Products from "@/pages/products";
+import Catalogue from "@/pages/catalogue";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
@@ -24,13 +25,19 @@ function App() {
   return (
     <Router>
       <QueryClientProvider client={queryClient}>
-        <div className="flex flex-col min-h-screen">
-          <Header />
-          <main className="flex-grow">
-            <AppRoutes />
-          </main>
-          <Footer />
-        </div>
+        <Switch>
+          {/* The catalogue shows only the PDF, without the site header and footer */}
+          <Route path="/catalogue" component={Catalogue} />
+          <Route>
+            <div className="flex flex-col min-h-screen">
+              <Header />
+              <main className="flex-grow">
+                <AppRoutes />
+              </main>
+              <Footer />
+            </div>
+          </Route>
+        </Switch>
         <Toaster />
       </QueryClientProvider>
     </Router>
