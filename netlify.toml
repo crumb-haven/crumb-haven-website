@@ -4,7 +4,7 @@
 
 [[redirects]]
   from = "/catalogue"
-  to = "/catalogue.html"
+  to = "/catalogue/index.html"
   status = 200
 
 [[redirects]]
