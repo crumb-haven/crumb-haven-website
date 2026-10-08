@@ -6,6 +6,7 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import Product from "@/pages/product";
 import Products from "@/pages/products";
+import Catalogue from "@/pages/catalogue";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
@@ -15,6 +16,7 @@ function AppRoutes() {
       <Route path="/" component={Home} />
       <Route path="/products" component={Products} />
       <Route path="/product/:slug" component={Product} />
+      <Route path="/catalogue" component={Catalogue} />
       <Route component={NotFound} />
     </Switch>
   );
