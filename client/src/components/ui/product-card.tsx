@@ -7,18 +7,6 @@ import chocochipBrownieImage from "@assets/Chocochip Brownie.png";
 import kodoMilletImage from "@assets/Kodo Millet.png";
 import honeyOatsImage from "@assets/Honey Oats.png";
 
-// Preload critical images
-const preloadImages = () => {
-  const images = [almondOatImage, chocochipBrownieImage, kodoMilletImage, honeyOatsImage];
-  images.forEach((image) => {
-    const img = new Image();
-    img.src = image;
-  });
-};
-
-// Call preload once
-preloadImages();
-
 interface ProductCardProps {
   product: Product;
 }
