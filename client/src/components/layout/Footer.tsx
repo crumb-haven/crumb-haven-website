@@ -9,7 +9,7 @@ const Footer = () => {
           {/* About */}
           <div>
             <div className="mb-4">
-              <img src={logoImage} alt="Crumb Haven" className="h-20 mb-2" />
+              <img src={logoImage} alt="Crumb Haven" className="h-20 mb-2" loading="lazy" decoding="async" />
             </div>
             <p className="opacity-80 mb-4">
               Indulgence never tasted so healthy. Our cookies are crafted with pure desi ghee, zero preservatives, and no trans fats.
