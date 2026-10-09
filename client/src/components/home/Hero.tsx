@@ -45,6 +45,9 @@ const Hero = () => {
               className="rounded-lg shadow-lg w-full object-cover transition-transform duration-300 hover:scale-[1.02]"
               width="600" 
               height="400"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
             />
             <motion.div 
               className="absolute -top-4 -right-4 bg-[#F2C94C] rounded-full w-24 h-24 flex items-center justify-center transform rotate-12 shadow-md"
