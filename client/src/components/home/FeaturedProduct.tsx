@@ -167,6 +167,8 @@ const FeaturedProduct = () => {
                 className="w-full h-full object-cover"
                 width="800" 
                 height="600"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
