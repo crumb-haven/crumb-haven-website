@@ -97,6 +97,8 @@ const Lifestyle = () => {
               className="rounded-lg shadow-lg w-full h-auto object-cover"
               width="600" 
               height="400"
+              loading="lazy"
+              decoding="async"
             />
           </motion.div>
         </div>
