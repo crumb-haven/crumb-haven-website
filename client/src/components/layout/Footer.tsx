@@ -36,7 +36,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><Link href="/" className="opacity-80 hover:opacity-100">Home</Link></li>
               <li><Link href="/products" className="opacity-80 hover:opacity-100">Our Cookies</Link></li>
-              <li><Link href="/catalogue" className="opacity-80 hover:opacity-100">Catalogue</Link></li>
+              <li><a href="https://catalogue.crumbhaven.in/" className="opacity-80 hover:opacity-100">Catalogue</a></li>
               <li><a href="/#about" className="opacity-80 hover:opacity-100">About Us</a></li>
               <li><a href="/#ingredients" className="opacity-80 hover:opacity-100">Ingredients</a></li>
               <li><a href="/#contact" className="opacity-80 hover:opacity-100">Contact</a></li>
