@@ -76,6 +76,8 @@ const Ingredients = () => {
                 className="w-32 h-32 object-cover mx-auto rounded-full mb-4 border-4 border-[#F2C94C]"
                 width="128" 
                 height="128"
+                loading="lazy"
+                decoding="async"
               />
               <h3 className="font-['Playfair_Display'] text-xl font-semibold text-[#8B5A2B] mb-2">
                 {ingredient.name}
