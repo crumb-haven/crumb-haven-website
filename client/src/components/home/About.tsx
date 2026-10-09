@@ -68,6 +68,8 @@ const About = () => {
               src={honeyOatsImage}
               alt="Honey Oats Cookie"
               className="rounded-lg shadow-xl w-full"
+              loading="lazy"
+              decoding="async"
             />
           </motion.div>
         </div>
