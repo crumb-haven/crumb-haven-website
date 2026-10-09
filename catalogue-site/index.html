@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crumb Haven Catalogue</title>
+  <meta name="description" content="View the Crumb Haven B2B Cookie Catalogue.">
+  <meta name="robots" content="index, follow">
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
+      background: #f4f4f4;
+    }
+    body {
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    #catalogue {
+      width: 100%;
+    }
+    .page {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto 12px;
+      background: #fff;
+      min-height: 160px;
+    }
+    .page canvas {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .placeholder {
+      width: 100%;
+      aspect-ratio: 1 / 1.414;
+      background: #fff;
+    }
+    .error {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+      color: #5b4636;
+      font: 16px/1.5 Arial, sans-serif;
+    }
+    @media (max-width: 767px) {
+      .page {
+        margin-bottom: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main id="catalogue"></main>
+
+  <script src="./pdf.min.js"></script>
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc = "./pdf.worker.min.js";
+
+    const root = document.getElementById("catalogue");
+    let pdfDocument;
+
+    function createPageSlot(pageNumber, pageWidth, pageHeight) {
+      const wrapper = document.createElement("section");
+      wrapper.className = "page";
+      wrapper.dataset.page = String(pageNumber);
+
+      const placeholder = document.createElement("div");
+      placeholder.className = "placeholder";
+      placeholder.style.aspectRatio = pageWidth + " / " + pageHeight;
+
+      wrapper.appendChild(placeholder);
+      root.appendChild(wrapper);
+      return wrapper;
+    }
+
+    async function renderPage(wrapper) {
+      if (wrapper.dataset.rendered === "true" || wrapper.dataset.rendering === "true") {
+        return;
+      }
+
+      wrapper.dataset.rendering = "true";
+      const pageNumber = Number(wrapper.dataset.page);
+
+      try {
+        const page = await pdfDocument.getPage(pageNumber);
+        const baseViewport = page.getViewport({ scale: 1 });
+        const width = Math.min(window.innerWidth, 1200);
+        const cssScale = width / baseViewport.width;
+        const dpr = Math.min(window.devicePixelRatio || 1, 1.75);
+        const viewport = page.getViewport({ scale: cssScale * dpr });
+
+        const canvas = document.createElement("canvas");
+        canvas.width = Math.ceil(viewport.width);
+        canvas.height = Math.ceil(viewport.height);
+        canvas.style.width = Math.ceil(viewport.width / dpr) + "px";
+        canvas.style.height = Math.ceil(viewport.height / dpr) + "px";
+
+        const context = canvas.getContext("2d", { alpha: false });
+        wrapper.replaceChildren(canvas);
+
+        await page.render({
+          canvasContext: context,
+          viewport
+        }).promise;
+
+        wrapper.dataset.rendered = "true";
+      } catch (error) {
+        console.error("Catalogue page render failed:", pageNumber, error);
+        wrapper.textContent = "";
+      } finally {
+        delete wrapper.dataset.rendering;
+      }
+    }
+
+    async function loadCatalogue() {
+      try {
+        pdfDocument = await pdfjsLib.getDocument("/catalogue.pdf").promise;
+
+        const firstPage = await pdfDocument.getPage(1);
+        const baseViewport = firstPage.getViewport({ scale: 1 });
+
+        for (let i = 1; i <= pdfDocument.numPages; i++) {
+          createPageSlot(i, baseViewport.width, baseViewport.height);
+        }
+
+        const slots = [...root.querySelectorAll(".page")];
+
+        // Render the first page immediately for the fastest perceived load.
+        await renderPage(slots[0]);
+
+        // Render other pages just before they enter the viewport.
+        const observer = new IntersectionObserver(
+          entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                renderPage(entry.target);
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { rootMargin: "1200px 0px" }
+        );
+
+        slots.slice(1).forEach(slot => observer.observe(slot));
+      } catch (error) {
+        console.error("Catalogue failed to load:", error);
+        root.innerHTML =
+          '<div class="error">The catalogue could not be displayed right now.</div>';
+      }
+    }
+
+    loadCatalogue();
+  </script>
+</body>
+</html>
