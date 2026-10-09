@@ -1,12 +1,25 @@
+import { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet";
 import Hero from "@/components/home/Hero";
 import Features from "@/components/home/Features";
-import Bestsellers from "@/components/home/Bestsellers";
-import About from "@/components/home/About";
-import Lifestyle from "@/components/home/Lifestyle";
-import Testimonials from "@/components/home/Testimonials";
-import Newsletter from "@/components/home/Newsletter";
-import Contact from "@/components/home/Contact";
+
+const Bestsellers = lazy(() => import("@/components/home/Bestsellers"));
+const About = lazy(() => import("@/components/home/About"));
+const Lifestyle = lazy(() => import("@/components/home/Lifestyle"));
+const Testimonials = lazy(() => import("@/components/home/Testimonials"));
+const Newsletter = lazy(() => import("@/components/home/Newsletter"));
+const Contact = lazy(() => import("@/components/home/Contact"));
+
+const DeferredSections = () => (
+  <Suspense fallback={null}>
+    <Bestsellers />
+    <About />
+    <Lifestyle />
+    <Testimonials />
+    <Newsletter />
+    <Contact />
+  </Suspense>
+);
 
 const Home = () => {
   return (
@@ -18,15 +31,10 @@ const Home = () => {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://crumbhaven.in/" />
       </Helmet>
-      
+
       <Hero />
       <Features />
-      <Bestsellers />
-      <About />
-      <Lifestyle />
-      <Testimonials />
-      <Newsletter />
-      <Contact />
+      <DeferredSections />
     </>
   );
 };
